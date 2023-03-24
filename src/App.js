@@ -1,25 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
 
+const singers = [
+  { name: 'dr.Mahfuz', Job: 'Inger' },
+  { name: 'Dr. Mahfuz', job: 'Singer' },
+  { name: 'Eva Rahman', job: 'Singer2' },
+  { name: 'Agun', job: 'sopno' },
+  { name: 'shuvro', job: 'pathor' }
+]
+
+
+
+
+
 function App() {
+  const nayoks = ['Rubel', 'BappaDa', 'Kuber', 'Jashim', 'Salman Shah', 'Riyaz', 'Anwar'];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Person name="developer"></Person>
+
+
+      {
+        singers.map(singer => <Person name={singer.name} ></Person>)
+      }
     </div>
+
   );
+}
+function Person(props) {
+  return (
+    <div className='person'>
+      <h1 >Devoloperraj</h1>
+      <p>{props.name}</p>
+    </div>
+  )
 }
 
 export default App;
